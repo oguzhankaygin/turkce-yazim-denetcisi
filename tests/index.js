@@ -3,3 +3,4 @@ import './kurallar.test.js';
 import './metin.test.js';
 import './claude.test.js';
 import './tirnak-karisik.test.js';
+import './sw.test.js';
