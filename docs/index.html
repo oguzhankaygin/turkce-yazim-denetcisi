@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Türkçe ödev, makale ve tez metinleri için tarayıcıda çalışan yazım ve biçim denetçisi.">
+  <title>Türkçe Yazım ve Biçim Denetçisi</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <header class="ust">
+    <div class="kapsayici">
+      <h1>Türkçe Yazım ve Biçim Denetçisi</h1>
+      <p>Ödev, makale ve tez metinlerinizde yazımı ve biçim tutarlılığını denetleyin.</p>
+      <p class="ikincil">Metin cihazınızda kalır. Bu sayfa verilerinizi sunucuya göndermez veya saklamaz.</p>
+    </div>
+  </header>
+
+  <main class="kapsayici">
+    <noscript><p>Denetçiyi kullanmak için JavaScript’i etkinleştirin.</p></noscript>
+    <dl class="istatistik" aria-label="Metin istatistikleri">
+      <div><dt>Sözcük</dt><dd id="sozcuk">0</dd></div>
+      <div><dt>Cümle</dt><dd id="cumle">0</dd></div>
+      <div><dt>Ort. sözcük / cümle</dt><dd id="ortalama">—</dd></div>
+      <div><dt>Ateşman puanı</dt><dd id="atesman">—</dd></div>
+    </dl>
+
+    <div class="yerlesim">
+      <section class="panel" aria-labelledby="metin-baslik">
+        <h2 id="metin-baslik"><label for="metin">Metniniz</label></h2>
+        <textarea id="metin" rows="10" spellcheck="false" autocomplete="off" placeholder="Türkçe metninizi buraya yapıştırın veya yazın."></textarea>
+        <div class="eylemler">
+          <button id="kopyala" type="button" disabled>Metni kopyala</button>
+          <button id="indir" type="button" disabled>.txt indir</button>
+          <button id="temizle" type="button">Temizle</button>
+        </div>
+        <h3 id="onizleme-baslik">Vurgulu önizleme</h3>
+        <div id="onizleme" class="onizleme" role="region" aria-labelledby="onizleme-baslik" tabindex="0">Metniniz burada görünecek.</div>
+      </section>
+      <section class="panel" aria-labelledby="bulgu-baslik">
+        <div class="baslik-satiri">
+          <h2 id="bulgu-baslik">Bulgular</h2>
+          <span id="bulgu-sayi" class="ikincil" aria-live="polite"></span>
+        </div>
+        <button id="toplu" class="birincil" type="button" disabled>Tümünü uygula (yalnızca hatalar)</button>
+        <details id="ayarlar">
+          <summary>Kuralları aç / kapat</summary>
+          <div id="kurallar"></div>
+        </details>
+        <p id="bos-bulgu" class="ikincil">Metin eklediğinizde bulgular burada görünür.</p>
+        <ol id="bulgular" class="bulgular" aria-label="Metin bulguları"></ol>
+      </section>
+    </div>
+    <p id="durum" class="durum" role="status"></p>
+
+    <section class="panel claude" aria-labelledby="claude-baslik">
+      <h2 id="claude-baslik">Claude ile inceleme</h2>
+      <ol class="adimlar">
+        <li>“Claude’da aç” ile istemi kopyalayın ve yeni sekmeyi açın.</li>
+        <li>İstemi kendi Claude hesabınızda sohbete yapıştırıp gönderin.</li>
+        <li>Claude’un JSON yanıtını aşağıya yapıştırıp önerileri ekleyin.</li>
+      </ol>
+      <p class="ikincil">İstemi Claude’a gönderdiğinizde metninizi Claude ile paylaşmış olursunuz.</p>
+      <button id="claude-ac" class="birincil" type="button" disabled>Claude’da aç</button>
+      <div id="istem-alani" hidden>
+        <label for="istem">Hazır istem</label>
+        <textarea id="istem" rows="6" readonly></textarea>
+        <p id="istem-durum" role="status"></p>
+        <a href="https://claude.ai/new" target="_blank" rel="noopener noreferrer">Claude’u yeni sekmede aç</a>
+      </div>
+      <label for="yanit">Claude’un yanıtını yapıştır</label>
+      <textarea id="yanit" rows="5" spellcheck="false" autocomplete="off" maxlength="100000" placeholder="JSON yanıtını buraya yapıştırın."></textarea>
+      <button id="aktar" type="button" disabled>Önerileri ekle</button>
+      <p id="yanit-durum" role="status"></p>
+      <div id="genel-alan" hidden>
+        <h3>Claude’un genel değerlendirmesi</h3>
+        <p id="genel"></p>
+      </div>
+    </section>
+    <footer>Kaynakça denetimi için <a href="https://github.com/oguzhankaygin/kaynakca-denetcisi">Kaynakça Denetçisi</a> aracını kullanabilirsiniz.</footer>
+  </main>
+</body>
+</html>
