@@ -4,6 +4,8 @@
 
 [Tarayıcıda kullan](https://oguzhankaygin.github.io/turkce-yazim-denetcisi/)
 
+Telefonda tarayıcı menüsündeki **Ana ekrana ekle** (iPhone’da Paylaş → Ana Ekrana Ekle) seçeneğiyle uygulama gibi açabilirsiniz; bir kez açıldıktan sonra internetsiz de çalışır.
+
 ## Nasıl çalışır?
 
 1. **Kurallı denetim.** Metni yapıştırın. Bulgulardan birine tıklayarak metindeki yerini görün. Düzeltmeleri tek tek uygulayın veya yalnızca hata düzeyindeki bulguları topluca düzeltin. İstediğiniz kuralları açıp kapatabilir, son metni kopyalayabilir veya TXT olarak indirebilirsiniz.

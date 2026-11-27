@@ -1,8 +1,8 @@
 "use strict";
 
 // Ağ öncelikli önbellek: çevrimiçiyken her zaman güncel dosya, bağlantı yokken son kopya.
-const CACHE = "turkce-yazim-denetcisi-v1";
-const DOSYALAR = ["./", "./app.js","./index.html","./lib/claude.js","./lib/kurallar.js","./lib/metin.js","./lib/sozcukler.js","./style.css"];
+const CACHE = "turkce-yazim-denetcisi-v2";
+const DOSYALAR = ["./", "./app.js","./index.html","./lib/claude.js","./lib/kurallar.js","./lib/metin.js","./lib/sozcukler.js","./style.css","./manifest.webmanifest","./ikon.svg","./ikon-192.png","./ikon-512.png"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(DOSYALAR)).then(() => self.skipWaiting()));

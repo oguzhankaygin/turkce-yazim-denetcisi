@@ -1,0 +1,38 @@
+{
+  "name": "Türkçe Yazım ve Biçim Denetçisi",
+  "short_name": "Yazım Denetçisi",
+  "description": "Türkçe ödev, makale ve tez metinleri için tarayıcıda çalışan yazım ve biçim denetçisi.",
+  "lang": "tr",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6f5",
+  "theme_color": "#00584d",
+  "icons": [
+    {
+      "src": "ikon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "ikon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
